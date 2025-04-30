@@ -1,0 +1,14 @@
+C:\Users\Q1\Documents\2025\VectorEditor\bin\Release\net9.0-windows\VectorEditor.exe
+C:\Users\Q1\Documents\2025\VectorEditor\bin\Release\net9.0-windows\VectorEditor.deps.json
+C:\Users\Q1\Documents\2025\VectorEditor\bin\Release\net9.0-windows\VectorEditor.runtimeconfig.json
+C:\Users\Q1\Documents\2025\VectorEditor\bin\Release\net9.0-windows\VectorEditor.dll
+C:\Users\Q1\Documents\2025\VectorEditor\bin\Release\net9.0-windows\VectorEditor.pdb
+C:\Users\Q1\Documents\2025\VectorEditor\obj\Release\net9.0-windows\VectorEditor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Q1\Documents\2025\VectorEditor\obj\Release\net9.0-windows\VectorEditor.AssemblyInfoInputs.cache
+C:\Users\Q1\Documents\2025\VectorEditor\obj\Release\net9.0-windows\VectorEditor.AssemblyInfo.cs
+C:\Users\Q1\Documents\2025\VectorEditor\obj\Release\net9.0-windows\VectorEditor.csproj.CoreCompileInputs.cache
+C:\Users\Q1\Documents\2025\VectorEditor\obj\Release\net9.0-windows\VectorEditor.dll
+C:\Users\Q1\Documents\2025\VectorEditor\obj\Release\net9.0-windows\refint\VectorEditor.dll
+C:\Users\Q1\Documents\2025\VectorEditor\obj\Release\net9.0-windows\VectorEditor.pdb
+C:\Users\Q1\Documents\2025\VectorEditor\obj\Release\net9.0-windows\VectorEditor.genruntimeconfig.cache
+C:\Users\Q1\Documents\2025\VectorEditor\obj\Release\net9.0-windows\ref\VectorEditor.dll
