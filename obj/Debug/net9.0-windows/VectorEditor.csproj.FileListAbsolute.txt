@@ -26,3 +26,8 @@ C:\Users\Q1\Documents\2025\VectorEditor\obj\Debug\net9.0-windows\refint\VectorEd
 C:\Users\Q1\Documents\2025\VectorEditor\obj\Debug\net9.0-windows\VectorEditor.pdb
 C:\Users\Q1\Documents\2025\VectorEditor\obj\Debug\net9.0-windows\VectorEditor.genruntimeconfig.cache
 C:\Users\Q1\Documents\2025\VectorEditor\obj\Debug\net9.0-windows\ref\VectorEditor.dll
+C:\Users\Q1\Documents\2025\vectoreditor\obj\Debug\net9.0-windows\VectorEditor.sourcelink.json
+C:\Users\Q1\Documents\2025\VectorEditor\obj\Debug\net9.0-windows\VectorEditor.csproj.AssemblyReference.cache
+C:\Users\Q1\Documents\2025\VectorEditor\bin\Debug\net9.0-windows\FontAwesome.Sharp.dll
+C:\Users\Q1\Documents\2025\VectorEditor\bin\Debug\net9.0-windows\MaterialSkin.dll
+C:\Users\Q1\Documents\2025\VectorEditor\obj\Debug\net9.0-windows\VectorEd.5FD34CD2.Up2Date
