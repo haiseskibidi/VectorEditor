@@ -16,6 +16,17 @@ namespace VectorEditor
         public Color FillColor { get; set; }
         public bool IsFilled { get; set; }
 
+        private static Dictionary<Color, Bitmap> pixelCache = new Dictionary<Color, Bitmap>();
+
+        public static void ClearPixelCache()
+        {
+            foreach (var bitmap in pixelCache.Values)
+            {
+                bitmap.Dispose();
+            }
+            pixelCache.Clear();
+        }
+
         public Shape()
         {
             Color = Color.Black;
@@ -66,10 +77,16 @@ namespace VectorEditor
 
         protected void DrawPixel(Graphics g, int x, int y, Color color)
         {
-            using (SolidBrush brush = new SolidBrush(color))
+            Bitmap pixelBitmap;
+            
+            if (!pixelCache.TryGetValue(color, out pixelBitmap))
             {
-                g.FillRectangle(brush, x, y, 1, 1);
+                pixelBitmap = new Bitmap(1, 1);
+                pixelBitmap.SetPixel(0, 0, color);
+                pixelCache[color] = pixelBitmap;
             }
+            
+            g.DrawImageUnscaled(pixelBitmap, x, y);
         }
         
         protected void DrawLine(Graphics g, int x0, int y0, int x1, int y1, Color color, int penWidth)
@@ -107,13 +124,36 @@ namespace VectorEditor
         
         protected void FillRectangle(Graphics g, Rectangle rect, Color color)
         {
-            for (int y = rect.Top; y < rect.Bottom; y++)
+            if (rect.Width <= 0 || rect.Height <= 0)
+                return;
+                
+            Bitmap rectBitmap = new Bitmap(rect.Width, rect.Height);
+            
+            System.Drawing.Imaging.BitmapData bitmapData = rectBitmap.LockBits(
+                new Rectangle(0, 0, rectBitmap.Width, rectBitmap.Height),
+                System.Drawing.Imaging.ImageLockMode.WriteOnly,
+                System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+                
+            IntPtr ptr = bitmapData.Scan0;
+            
+            int bytes = Math.Abs(bitmapData.Stride) * rect.Height;
+            byte[] rgbValues = new byte[bytes];
+            
+            for (int i = 0; i < rgbValues.Length; i += 4)
             {
-                for (int x = rect.Left; x < rect.Right; x++)
-                {
-                    DrawPixel(g, x, y, color);
-                }
+                rgbValues[i] = color.B;
+                rgbValues[i + 1] = color.G;
+                rgbValues[i + 2] = color.R;
+                rgbValues[i + 3] = color.A;
             }
+            
+            System.Runtime.InteropServices.Marshal.Copy(rgbValues, 0, ptr, bytes);
+            
+            rectBitmap.UnlockBits(bitmapData);
+            
+            g.DrawImageUnscaled(rectBitmap, rect.X, rect.Y);
+            
+            rectBitmap.Dispose();
         }
         
         protected void DrawRectangle(Graphics g, Rectangle rect, Color color, int penWidth)
